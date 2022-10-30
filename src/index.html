@@ -1,27 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Project Starter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="index,follow" />
-    <meta name="description" content="TODO: A starter project for ..." />
 
-    <link rel="stylesheet" href="./stylesheets/main.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>pizza</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="TODO: A starter project for ..." />
 
-  <body>
-    <!-- Your HTML goes here -->
-    <h1 class="display-2 text-center my-5 py-5">
-      <span class="d-block py-5">
-        <i class="bi bi-filetype-html text-primary"></i>
-        <i class="bi bi-filetype-css text-danger"></i>
-        <i class="bi bi-filetype-js text-success"></i>
-      </span>
+  <style>
+    .d-flex {
+      display: flex;
+      width: 80%;
+      margin: 1rem auto;
+    }
 
-      Welcome to CS 2350!
-    </h1>
+    form {
+      padding-left: 1rem;
+    }
+  </style>
+</head>
 
-    <script type="module" src="./javascripts/main.js"></script>
-  </body>
+<body onload="draw();">
+  <!-- Your HTML goes here -->
+  <h1 style="text-align: center;">Make a Pizza</h1>
+  <div class="d-flex">
+    <canvas id="myCanvas" width="600" height="600" style="background: lightgray;">
+      Browser does not support canvas
+    </canvas>
+    <form action="">
+      <h1>Controls</h1>
+	  <label for="textColor">Select Pizza Sauce Color</label>
+      <input id="sauceColor" type="color"><br>
+	  <label for="sauceColor">Select Pizza Bread Color</label>
+      <input id="textColor" type="color"><br>
+      <label for="randomdots">Press button to add pepperoni</label>
+      <input id="randomdots" type="button" value="Press Me" name="randomdots"><br>
+    </form>
+  </div>
+
+
+  <script type="module">
+    function render() {
+      let c = document.querySelector('canvas')
+
+      if (c.getContext) {
+        let ctx = c.getContext('2d')
+        ctx.clearRect(0, 0, 600, 600)
+
+		ctx.fillStyle = document.getElementById('textColor').value
+		ctx.beginPath()
+		ctx.arc(300, 300, 250, 0, 2 * Math.PI)
+		ctx.fill()
+		
+		ctx.fillStyle = document.getElementById('sauceColor').value
+		ctx.beginPath()
+		ctx.arc(300, 300, 230, 0, 2 * Math.PI)
+		ctx.fill()
+	  
+        
+      }
+    }
+	
+	function dots() {
+      let c = document.querySelector('canvas')
+
+      if (c.getContext) {
+        let pocadots = c.getContext('2d')
+        let xr = 200
+        let yr = 200
+        while (xr > .3 || yr > .3) {
+          xr = (xr * 350)+125
+          yr = (yr * 350)+125
+
+          pocadots.beginPath()
+          pocadots.fillStyle = '#C34A2C'
+          pocadots.arc(xr, yr, 25, 0, 2 * Math.PI)
+          pocadots.fill()
+		  
+		  pocadots.beginPath()
+          pocadots.fillStyle = '#C04000'
+          pocadots.arc(xr, yr, 20, 0, 2 * Math.PI)
+          pocadots.fill()
+
+          xr = Math.random()
+          yr = Math.random()
+        }
+      }
+    }
+
+    document.getElementById('textColor').onchange = render
+	document.getElementById('sauceColor').onchange = render
+	document.getElementById('randomdots').onclick = dots
+
+    document.body.onload = render
+  </script>
+</body>
+
 </html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="./stylesheets/main.css" />
+      <title>Assignment 5</title>
+      <style>
+         footer {
+         background-color: gray;
+         height: 70px;
+         color: white;
+         font-size: 20px;
+		 margin-top: 700px;
+         }
+         footer > ul {
+         width: 30%;
+         float: left;
+         }
+         footer > ul > li {
+         text-align: left;
+         list-style-type: none;
+         display: inline;
+         }
+         footer > ul > li > a {
+         text-decoration: none;
+         color: white;
+         }
+         .bmenu {
+         list-style-type: none;
+         display: inline;
+         text-align: right;
+         float: right;
+         width: 30%;
+         }
+         .topbar {
+         height: 70px;
+         }
+         .topbar > p {
+         font-weight: bold;
+         font-size: 20px;
+         width: 30%;
+         float: left;
+         }
+         .topbar input[type=text] {
+         float: right;
+         padding: 6px;
+         margin-top: 8px;
+         margin-right: 16px;
+         font-size: 17px;
+         text-align: center;
+		 border-radius: 16px;
+		 background-color: lightgray;
+		 border: none;
+         }
+         .topbar2 {
+         background-color: lightgray;
+         height: 70px;
+         }
+         .topbar2 > ul {
+         text-align: center;
+         padding: 25px 0px;
+         }
+         .topbar2 > ul > li {
+         padding: 0px 10px;
+         text-align: center;
+         list-style-type: none;
+         display: inline;
+         font-size: 20px;
+         }
+         .topbar2 > ul > li > a {
+         text-decoration: none;
+         color: darkorange;
+         }
+		 .leftbody {
+		 margin: 0% 0% 0% 10%;
+		 width: 50%;
+		 float: left;
+		 }
+		 .leftpost {
+		 height: 320px;
+		 }
+		 .leftpost > img {
+		 float: left;
+		 border-radius: 16px;
+		 margin: 0% 2% 0% 0%;
+		 width: 300px;
+		 height: 300px;
+		 }
+		 .rightbody {
+		 padding: 20px;
+		 width: 300px;
+		 background-color: lightgray;
+		 margin: 10px 10% 0% 0%;
+		 height: 640px;
+		 float: right;
+		 border-radius: 16px;
+		 }
+		 .rightbody > img {
+		 width: 300px;
+		 height: 300px;
+		 }
+		 
+		 
+		 
+		 
+		 
+		 @media (max-width: 500px) {
+		 .leftbody {
+		 margin: 0% 0% 0% 0%;
+		 width: 100%;
+		 float: none;
+		 }
+		  .rightbody{
+		  display: none;
+		  height: 0px;
+		  }
+		  .topbar input[type=text] {
+         display: none;
+         }
+		  .topbar2{
+		  display: none;
+		  }
+		  .leftpost > img {
+		 border-radius: 16px;
+		 margin: 0% 2% 0% 0%;
+		 width: 100%;
+		 height: 300px;
+		 }
+		 .leftpost {
+		 height: 500px;
+		 }
+		  footer > ul {
+         display: none;
+         }
+		 .bmenu {
+         list-style-type: none;
+         display: inline;
+         text-align: center;
+         float: none;
+         width: 30%;
+         }
+		}
+      </style>
+   </head>
+   <body>
+      <div class=topbar>
+         <p>Grant Chadwick</p>
+         <input type="text" placeholder="Type to search">
+      </div>
+      <div class=topbar2>
+         <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Recent posts</a></li>
+            <li><a href="">Old posts</a></li>
+            <li><a href="">Contact us</a></li>
+            <li><a href="">About us</a></li>
+         </ul>
+      </div>
+	  <div class=leftbody>
+        <div class=leftpost>
+			<img src="https://images.unsplash.com/photo-1662652610624-4c12ff68385b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60">
+			<h1>First post with image</h1>
+			<h2>By Adam Smith, Jan 1 2021</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+		</div>
+		<hr>
+		<div class=leftpost>
+			<img src="https://images.unsplash.com/photo-1665208446619-05a2043b79c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60">
+			<h1>Second post with image</h1>
+			<h2>By John Doe, Jan 1 2021</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare aenean euismod elementum nisi. Aliquet lectus proin nibh nisl condimentum. Tellus integer feugiat scelerisque</p>
+		</div>
+      </div>
+	  <div class=rightbody>
+		<h1>Secondary content here</h1>
+		<img src="https://images.unsplash.com/photo-1665231795856-769fb08a90bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60">
+		<p>Tincidunt eget nullam non nisi est sit amet facilisis. Quis lectus nulla at volutpat diam ut venenatis tellus. Vestibulum mattis ullamcorper velit sed ullamcorper morbi. Arcu ac tortor dignissim convallis. Purus viverra accumsan in nisl.</p>
+	  </div>
+      <footer>
+         <ul>
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Twitter</a></li>
+            <li><a href="">YouTube</a></li>
+         </ul>
+         <div class=bmenu>
+            <p>© All rights reserved</p>
+         </div>
+      </footer>
+      <script type="module" src="./javascripts/main.js"></script>
+   </body>
+</html>
